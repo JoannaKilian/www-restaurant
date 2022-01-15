@@ -2,8 +2,145 @@
     margin: 0;
     box-sizing: border-box;
 }
+body, html {
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
 div.wrap {
-    background-color: aqua;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+section.banner {
+    height: 60px;
+    margin: 0 auto;
+    background-image: url(/pictures/banner2.jpg);
+    background-size: cover;
+    filter: grayscale(95%);
+
+}
+header {
+    display: flex;
+}
+header .banner {
+    flex-grow: 1;
+    background-image: url(/pictures/baner.jpg);
+    height: 60vh;
+    background-attachment: fixed;
+}
+.banner img {
+    width: 100px;
+    margin: 30px;
+}
+.banner h1 {
+    font-size: 45px;
+    color: #fff;
+    text-shadow: #333 5px 5px 3px;
+    margin-left: 30px;
+}
+header .header {
+    flex-basis: 200px;
+}
+.header ul, .footer ul {
+    list-style: none;
+    padding-inline-start: 0px
+}
+.header li {
+    width: 100%;
+}
+.header li a, .footer li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 0px 20px;
+    height: 15vh;
+    line-height: 15vh;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #fff;
+    transition: .5s;
+}
+.header li a:hover, .footer li a:hover {
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+}
+.course h1, .dessert h1 {
+    color: #fff;
+    margin: 30px 20px;
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+div.course, div.dessert {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.course div, .dessert div {
+    flex-basis: 24%;
+    overflow: hidden;
+}
+.course div img, .dessert div img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+.dessert div img {
+    height: 250px;
+    width: 50%;
+}
+
+.course div img:hover {
+    transform: scale(1.2)
+}
+.dessert div img:hover {
+    transform: scale(1.3)
+}
+.course button, .dessert button {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #333;
+    margin-top: 10px;
+    box-shadow: #000 1px 1px 4px 1px;
+    cursor: pointer;
+}
+
+footer {
+    /* height: 100px; */
+    background-color: #111;
+    margin-top: 20px;
+    width: 100%;
+    color: #fff;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+div.contact {
+    float:left;
+    width: 20%;
+    text-align: center;
+}
+div.contact p {
+    line-height:50px;
+}
+nav.footer {
+    float:left;
+}
+nav.footer {
+    width: 80%;
+} 
+.footer li {
+    width: 20%;
+    float: left;
 }

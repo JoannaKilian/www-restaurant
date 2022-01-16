@@ -3,21 +3,84 @@
     box-sizing: border-box;
 }
 body, html {
-    background-color: #333;
+    background-color: #222;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
 }
 div.wrap {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-section.banner {
-    height: 60px;
-    margin: 0 auto;
-    background-image: url(/pictures/banner2.jpg);
-    background-size: cover;
-    filter: grayscale(95%);
+section.bannerFixed {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top:-70px;
+    background-color: rgba(0, 0, 0, 0.445);
+    height: 70px;
+    overflow: hidden;
+    z-index: 3;
+    transition: .8s;
+}
+section.visible {
+    top: 0px;
+}
 
+.bannerFixed div {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+.bannerFixed img {
+    width: 60px;
+    margin-left: 10px;
+}
+
+.bannerFixed h1 {
+    display: block;
+    margin-left: 10px;
+    width: 30%;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.856);
+    text-shadow: #333 5px 5px 3px;
+    letter-spacing: 3px;
+}
+
+.bannerFixed nav {
+    flex-grow: 1;
+}
+
+.bannerFixed ul {
+    display: flex;
+    list-style: none;
+}
+
+.bannerFixed li {
+    flex-basis: 25%;
+}
+
+.bannerFixed a {
+    font-size: .7em;
+    display: block;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.856);
+    text-transform: uppercase;
+    width: 100%;
+    min-width: 95px;
+    line-height: 70px;
+    text-align: center;
+    border-left: 2px solid rgba(253, 253, 253, 0.507) ;
+    cursor: pointer;
+}
+.bannerFixed a:hover {
+    color: rgba(0, 0, 0, 0.89);
+    background-color: rgba(255, 255, 255, 0.541);
+}
+
+.banner img {
+    width: 60px;
 }
 header {
     display: flex;
@@ -33,10 +96,11 @@ header .banner {
     margin: 30px;
 }
 .banner h1 {
-    font-size: 45px;
-    color: #fff;
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.664);
     text-shadow: #333 5px 5px 3px;
     margin-left: 30px;
+    letter-spacing: 3px;
 }
 header .header {
     flex-basis: 200px;
@@ -67,29 +131,43 @@ header .header {
     font-size: 20px;
 }
 .course h1, .dessert h1 {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.671);
     margin: 30px 20px;
     text-align: center;
-    font-size: 24px;
-    text-transform: uppercase;
+    font-size: 1.8em;
+    text-transform: capitalize;
+    font-style: italic;
 }
 
-div.course, div.dessert {
+div.course, div.course2, div.dessert {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+div.course2 {
+    display: none;
+}
+div.visibleCourse2 {
+    display: flex;
 }
 
 .course div, .dessert div {
-    flex-basis: 24%;
+    flex-basis: 30%;
     overflow: hidden;
+    height: 220px;
+}
+
+.dessert div {
+    height: 500px;
 }
 .course div img, .dessert div img {
-    height: 200px;
+    height: 100%;
     width: 100%;
     object-fit: cover;
-    transition: .5s;
+    transition: .3s;
 }
 .dessert div img {
     height: 250px;
@@ -100,11 +178,11 @@ div.course, div.dessert {
     transform: scale(1.2)
 }
 .dessert div img:hover {
-    transform: scale(1.3)
+    transform: scale(1.2)
 }
 .course button, .dessert button {
     display: block;
-    width: 100%;
+    width: 30%;
     margin: 0 auto;
     padding: 10px;
     text-transform: uppercase;
@@ -112,35 +190,58 @@ div.course, div.dessert {
     margin-top: 10px;
     box-shadow: #000 1px 1px 4px 1px;
     cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.course button:hover, .dessert button:hover {
+    letter-spacing: 3px;
+    box-shadow: #000 3px 3px 5px 4px;
 }
 
 footer {
-    /* height: 100px; */
+    position: relative;
     background-color: #111;
     margin-top: 20px;
     width: 100%;
+    height: 400px;
     color: #fff;
+    overflow: hidden;
 }
-.clearfix:after {
-    content: "";
-    display: block;
-    clear: both;
-}
+
 div.contact {
     float:left;
     width: 20%;
     text-align: center;
 }
 div.contact p {
-    line-height:50px;
+    font-size: 2em;
+    text-shadow: rgba(248, 245, 245, 0.315) 3px 3px 10px;
+    line-height: 3em;
+
 }
-nav.footer {
-    float:left;
+
+footer .address {
+    font-size: 2em;
+    position: absolute;
+    top: 20%;
+    left: -5%;
+    transform: rotate(-10deg);
+    width: 110%;
 }
-nav.footer {
-    width: 80%;
-} 
-.footer li {
-    width: 20%;
-    float: left;
+
+footer .address p {
+    display: block;
+    margin: 30px 0;
+    animation: moveP 30s linear infinite;
+    text-shadow: rgba(248, 245, 245, 0.315) 3px 3px 10px;
+}
+@keyframes moveP {
+    from {transform: translateX(100%)}
+    to {transform: translateX(-100%)}
+}
+footer .address p:nth-child(2) {
+    animation: moveP 30s reverse linear infinite both;
+}
+footer .address p:last-child {
+    animation: moveP 35s 10s linear infinite both;
 }

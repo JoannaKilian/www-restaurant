@@ -3,7 +3,6 @@
     box-sizing: border-box;
 }
 body, html {
-    background-color: #222;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
 }
@@ -75,20 +74,20 @@ section.visible {
     cursor: pointer;
 }
 .bannerFixed a:hover {
-    color: rgba(0, 0, 0, 0.89);
-    background-color: rgba(255, 255, 255, 0.541);
+    color: rgba(0, 0, 0, 0.822);
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.582);
 }
 
 .banner img {
     width: 60px;
 }
 header {
-    display: flex;
+    position: relative;
 }
 header .banner {
-    flex-grow: 1;
     background-image: url(/pictures/baner.jpg);
-    height: 60vh;
+    height: 90vh;
     background-attachment: fixed;
 }
 .banner img {
@@ -96,8 +95,11 @@ header .banner {
     margin: 30px;
 }
 .banner h1 {
+    position: absolute;
+    top: 50px; 
+    left: 130px;
     font-size: 2em;
-    color: rgba(255, 255, 255, 0.664);
+    color: rgba(255, 255, 255, 0.815);
     text-shadow: #333 5px 5px 3px;
     margin-left: 30px;
     letter-spacing: 3px;
@@ -125,18 +127,17 @@ header .header {
     transition: .5s;
 }
 .header li a:hover, .footer li a:hover {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.616);
     color: #333;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 32px;
 }
 .course h1, .dessert h1 {
-    color: rgba(255, 255, 255, 0.671);
+    color: rgba(0, 0, 0, 0.753);
     margin: 30px 20px;
     text-align: center;
     font-size: 1.8em;
     text-transform: capitalize;
-    font-style: italic;
 }
 
 div.course, div.course2, div.dessert {
@@ -200,12 +201,12 @@ div.visibleCourse2 {
 
 footer {
     position: relative;
-    background-color: #111;
     margin-top: 20px;
     width: 100%;
-    height: 400px;
-    color: #fff;
+    height: 550px;
+    color: rgba(246, 244, 244, 0.753);
     overflow: hidden;
+
 }
 
 div.contact {
@@ -213,17 +214,20 @@ div.contact {
     width: 20%;
     text-align: center;
 }
-div.contact p {
+div.contact h3 {
+    color: rgba(0, 0, 0, 0.753);
     font-size: 2em;
     text-shadow: rgba(248, 245, 245, 0.315) 3px 3px 10px;
-    line-height: 3em;
-
+    line-height: 2em;
+}
+div.contact p {
+    color: rgba(0, 0, 0, 0.753);
 }
 
 footer .address {
-    font-size: 2em;
+    font-size: 1.5em;
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: -5%;
     transform: rotate(-10deg);
     width: 110%;
@@ -231,8 +235,11 @@ footer .address {
 
 footer .address p {
     display: block;
-    margin: 30px 0;
-    animation: moveP 30s linear infinite;
+    position: relative;
+    text-transform: uppercase;
+    margin: 20px 0;
+    line-height: 250%;
+    animation: moveP 20s linear infinite;
     text-shadow: rgba(248, 245, 245, 0.315) 3px 3px 10px;
 }
 @keyframes moveP {
@@ -240,8 +247,29 @@ footer .address p {
     to {transform: translateX(-100%)}
 }
 footer .address p:nth-child(2) {
-    animation: moveP 30s reverse linear infinite both;
+    animation: moveP 20s reverse linear infinite both;
 }
 footer .address p:last-child {
-    animation: moveP 35s 10s linear infinite both;
+    animation: moveP 25s 10s linear infinite both;
+}
+
+footer .address p:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250%;
+    background-color: #444;
+    z-index: -1;
+}
+footer .address p:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 250%;
+    background-color: #444;
+    z-index: -1;
 }

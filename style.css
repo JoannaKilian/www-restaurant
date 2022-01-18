@@ -86,7 +86,7 @@ header {
     position: relative;
 }
 header .banner {
-    background-image: url(/pictures/baner.jpg);
+    background-image: url(./pictures/baner.jpg);
     height: 90vh;
     background-attachment: fixed;
 }

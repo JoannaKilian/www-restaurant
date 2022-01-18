@@ -1,6 +1,7 @@
 ﻿# www-restaurant
 
-<a href="https://joannakilian.github.io/www-restaurant/">Visit site</a> 
+<a href="https://joannakilian.github.io/www-restaurant/">Visit site</a>
+<br>
 possibility to scroll to diferent sections
 ![image](https://user-images.githubusercontent.com/86100410/149830749-5bf0fb60-ec22-4bc2-ac22-8d28cc1d6693.png)
 moved menu
